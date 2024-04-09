@@ -1,0 +1,98 @@
+.fleet-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: "Arial", sans-serif;
+  width: 500px;
+  height: 300px;
+}
+
+.fleet-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex: 1;
+}
+
+.fleet-block {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet-block:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.block {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.large .title {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.large .value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.small .value {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  color: blue;
+}
+
+.small .title {
+  font-size: 16px;
+  color: #000;
+}
+
+.small {
+  background: #fff;
+  color: #000; /* Assuming you want the text in the small blocks to be black */
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small:hover {
+  transform: translateY(-3px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+}

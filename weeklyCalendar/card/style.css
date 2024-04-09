@@ -1,0 +1,29 @@
+.date-card {
+  background-color: white;
+  border-radius: 12px;
+  color: #333;
+  padding: 10px;
+  position: relative; /* For absolute positioning of the checkmark */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80px; /* Adjust the height as needed */
+  width: 180px; /* Adjust the width as needed */
+}
+
+.checkmark-icon {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: #1274f3; /* Color of the checkmark, use a color picker to match your image */
+  font-size: 24px; /* Large font size for the icon */
+}
+
+.value {
+  position: absolute;
+  bottom: 15px; /* Position at the bottom of the icon container */
+  right: 18px; /* Align with the right side of the icon container */
+  color: #1274f3; /* Color to match the checkmark */
+  font-size: 24px; /* Font size for the value */
+}

@@ -1,0 +1,67 @@
+.card {
+  width: 520px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.days-of-week {
+  display: flex;
+  /* background: #f0f0f0; */
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.days-of-week > div {
+  flex: 1;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.week-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.week {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+  background: white;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); */
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.week-label {
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.day {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  font-size: 16px; /* Larger text for main value */
+  color: blue;
+}
+
+.sub-value {
+  margin-left: 6px;
+  font-size: 14px; /* Smaller text for second row of values */
+  color: gray;
+}
+
+.heading {
+  font-family: Arial, sans-serif;
+  margin: 15px 0px 0px 15px;
+  padding-bottom: 5px;
+}

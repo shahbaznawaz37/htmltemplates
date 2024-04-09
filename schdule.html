@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Calendar</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  .calendar {
+    display: grid;
+    grid-template-columns: 150px repeat(7, 1fr);
+    border: 1px solid #ccc;
+  }
+  .calendar-header {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  .day {
+    font-size: 16px;
+
+  }
+  .date {
+    font-size: 46px;
+    padding-left: 25px;
+    line-height: 0.7;
+  }
+  .employee-column {
+    text-align: left;
+    padding-left: 10px;
+    border-right: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  .calendar-cell {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    position: relative;
+  }
+  .add-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  /* Additional formatting for task containers */
+  .task-container {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 3px;
+    z-index: 0;
+  }
+
+/* Hide the button by default */
+.add-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #b6d5f8;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+  }
+
+  /* Show the button on hover */
+  .calendar-cell:hover .add-button {
+    display: block;
+  }
+
+  /* Add a hover effect */
+  .add-button:hover {
+    background-color: #067df4;
+  }
+  .week-picker-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 25%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .week-picker-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #067df4;
+    font-weight: bold;
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="week-picker-container">
+      <div class="week-picker-nav">
+        <button id="prev-week">&lt;</button>
+      </div>
+      <input type="week" id="week-picker" class="form-control">
+      <div class="week-picker-nav">
+        <button id="next-week">&gt;</button>
+      </div>
+    </div>
+  <div class="calendar">
+    <div class="calendar-header"><span id="iso-week" class="hidden">36</span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+    <div class="calendar-header"><span class="day"></span><br><span class="date"></span></div>
+
+    <div class="employee-column">Employee 1</div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+
+    <div class="employee-column">Employee 2</div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+
+    <div class="employee-column">Employee 3</div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+    <div class="calendar-cell"><span class="add-button">ADD +</span></div>
+  </div>
+</div>
+
+<script>
+  function getDateOfISOWeek(year, week, day) {
+    const date = new Date(year, 0, (week - 1) * 7 + day);
+    const diff = date.getDay() - 1;
+    date.setDate(date.getDate() - diff);
+    return date;
+  }
+
+  function updateCalendarDates() {
+    const isoWeekElement = document.getElementById("iso-week");
+    const isoWeek = parseInt(isoWeekElement.textContent);
+
+    const currentYear = new Date().getFullYear();
+    const startDate = getDateOfISOWeek(currentYear, isoWeek, 1);
+
+    const dateHeaders = document.querySelectorAll(".calendar-header .date");
+    const dayHeaders = document.querySelectorAll(".calendar-header .day");
+
+    dateHeaders.forEach((dateHeader, index) => {
+      const currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + index);
+      const day = currentDate.toLocaleDateString("en-US", { weekday: "short" });
+      const date = currentDate.getDate();
+      dayHeaders[index].textContent = day;
+      dateHeader.textContent = date.toString().padStart(2, "0");
+    });
+  }
+
+  // Basic implementation of getISOWeek function
+  function getISOWeek(year, month, day) {
+    const date = new Date(year, month, day);
+    const firstDayOfYear = new Date(year, 0, 1);
+    const daysOffset = 6 - firstDayOfYear.getDay();
+    const daysPassed = Math.floor((date - firstDayOfYear) / (24 * 60 * 60 * 1000)) + daysOffset;
+    const isoWeek = Math.ceil(daysPassed / 7);
+    return isoWeek;
+  }
+
+  updateCalendarDates();
+
+  const addButtons = document.querySelectorAll(".add-button");
+  addButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // ... Your existing code for adding tasks ...
+      const task = prompt("Enter task:");
+      if (task !== null && task.trim() !== "") {
+        const cell = button.parentElement;
+        const employeeColumn = cell.previousElementSibling;
+        const dateHeader = cell.parentElement.querySelector(".calendar-header");
+        const employee = employeeColumn.textContent;
+        const date = dateHeader.textContent;
+        const taskContainer = document.createElement("div");
+        taskContainer.className = "task-container";
+        taskContainer.textContent = task;
+        cell.appendChild(taskContainer);
+      }
+    });
+  });
+
+  const weekPicker = document.getElementById("week-picker");
+  weekPicker.addEventListener("change", () => {
+    const selectedWeek = weekPicker.valueAsDate;
+    if (selectedWeek) {
+      const year = selectedWeek.getFullYear();
+      const month = selectedWeek.getMonth(); // Months are 0-indexed
+      const day = selectedWeek.getDate();
+      const isoWeek = getISOWeek(year, month, day);
+      document.getElementById("iso-week").textContent = isoWeek.toString();
+      updateCalendarDates();
+    }
+  });
+
+  const prevWeekButton = document.getElementById("prev-week");
+  const nextWeekButton = document.getElementById("next-week");
+
+  prevWeekButton.addEventListener("click", () => {
+    adjustWeek(-1);
+  });
+
+  nextWeekButton.addEventListener("click", () => {
+    adjustWeek(1);
+  });
+
+  function adjustWeek(weeks) {
+    const currentWeek = weekPicker.valueAsDate;
+    if (currentWeek) {
+      const newWeek = new Date(currentWeek);
+      newWeek.setDate(newWeek.getDate() + weeks * 7);
+      weekPicker.valueAsDate = newWeek;
+      weekPicker.dispatchEvent(new Event("change"));
+    }
+  }
+</script>
+</body>
+</html>
+</body>
+</html>
+

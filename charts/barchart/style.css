@@ -1,0 +1,54 @@
+.fleet-dashboard {
+  width: 520px;
+  margin: 50px 0px 0px 15px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.chart {
+  width: 100%;
+}
+.fleet-card {
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: -30px;
+}
+
+.fleet-block {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet-block:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.large .title {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.large .value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #484848;
+  font-family: Arial, Helvetica, sans-serif;
+}

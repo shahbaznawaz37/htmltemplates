@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Started Screen</title>
+</head>
+<body>
+    <h1>Welcome to our Get Started Screen</h1>
+
+    <div id="quote-container">
+        <img src="https://colo-logistics.com/erp/uploads/webs/quotes/1696875482_face.jpg" alt="Quote Image">
+        <h2>Test Quote</h2>
+        <p>Quote Description will come here.</p>
+    </div>
+
+    <script>
+        // Fetch data from the API and update the content
+        fetch('https://colo-logistics.com/erp/index.php/webs-get-motivational-quotes')
+            .then(response => response.json())
+            .then(data => {
+                const quoteContainer = document.getElementById('quote-container');
+                const quoteImage = quoteContainer.querySelector('img');
+                const quoteSubject = quoteContainer.querySelector('h2');
+                const quoteDescription = quoteContainer.querySelector('p');
+
+                quoteImage.src = data.response.quote_image;
+                quoteSubject.textContent = data.response.quote_subject;
+                quoteDescription.textContent = data.response.quote_description;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+</html>

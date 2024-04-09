@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Routes Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="section blue">
+        <h2>Amazon Work Summary Routes (WST)</h2>
+        <div class="route">
+          <span>Standard Parcel - Extra Large Van - US - 10 hr</span>
+          <span>03</span>
+          <button>▼</button>
+        </div>
+        <div class="details" style="display: none">
+          <div class="detail-row">
+            <div class="detail">Route CX49</div>
+            <div class="detail">Nicholas Knox</div>
+            <div class="detail">99%</div>
+            <div class="detail">82 mi</div>
+            <div class="detail"><a href="#">View</a></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail">Route CX50</div>
+            <div class="detail">Alex Pedroza</div>
+            <div class="detail">100%</div>
+            <div class="detail">90 mi</div>
+            <div class="detail"><a href="#">View</a></div>
+          </div>
+        </div>
+
+        <div class="route">
+          <span>Standard Parcel Electric - Rivian MEDIUM - 10 hr</span>
+          <span>19</span>
+          <button>▼</button>
+        </div>
+      </div>
+      <div class="section light-blue">
+        <h2>DSP Scope Routes</h2>
+        <div class="route">
+          <span>NCNS - No Call No Show</span>
+          <span>03</span>
+          <button>▼</button>
+        </div>
+      </div>
+      <div class="section red">
+        <h2>Under Change Request Routes with Amazon</h2>
+        <div class="route">
+          <span>Standard Parcel Electric - Rivian MEDIUM - 10 hr</span>
+          <span>03</span>
+          <button>▼</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add click event listener to all route buttons
+        document.querySelectorAll(".route button").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var details = this.parentElement.nextElementSibling; // Adjusted to get the next sibling
+            if (details.style.display === "none") {
+              details.style.display = "block";
+              this.textContent = "▲"; // Change button text to indicate collapse
+            } else {
+              details.style.display = "none";
+              this.textContent = "▼"; // Change button text to indicate expand
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

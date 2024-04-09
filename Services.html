@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Services Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .service-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 30px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .service-image {
+            flex: 1;
+            max-width: 300px;
+            border-radius: 8px;
+            transition: transform 0.4s ease;
+        }
+
+        .service-container:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        .service-description {
+            flex: 2;
+            padding: 0 20px;
+            margin-left: 6px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var serviceContainers = document.querySelectorAll('.service-container');
+            var body = document.querySelector('body');
+
+            body.style.opacity = 1;
+
+            for (var i = 0; i < serviceContainers.length; i++) {
+                (function (index) {
+                    setTimeout(function () {
+                        serviceContainers[index].style.opacity = 1;
+                        serviceContainers[index].style.transform = 'scale(1)';
+                    }, 200 * (index + 1));
+                })(i);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Services</h1>
+    <div class="service-container">
+        <img src="https://cdn.midjourney.com/c4dc36ca-4e98-4093-97a0-cbeee4ddf381/0_1_384_N.webp" alt="Payroll Processing" class="service-image">
+        <div class="service-description">
+            <h2 class="service-title">Payroll Processing</h2>
+            <p class="service-text">Our Payroll Processing service ensures accurate and timely processing of employee payrolls. We handle all aspects of payroll management, including tax withholdings, benefits deductions, and direct deposits. With our expertise, you can streamline your payroll operations and ensure compliance with all regulations.</p>
+            <p class="service-text">1. Payroll Register Preparation and Submission (via ADP or Paycom)</p>
+            <p class="service-text">2. Timecard Adjustments</p>
+        </div>
+    </div>
+    <div class="service-container">
+        <div class="service-description">
+            <h2 class="service-title">Onboarding</h2>
+            <p class="service-text">Our Onboarding service simplifies the process of integrating new employees into your organization. We provide comprehensive support, from paperwork and documentation to training and orientation programs. With our assistance, you can ensure a smooth transition for new hires and enhance employee satisfaction and productivity.</p>
+        </div>
+        <img src="https://cdn.midjourney.com/6175972c-b6a6-4dd1-99c0-c40875a16c9a/0_0.png" alt="Onboarding" class="service-image">
+    </div>
+    <div class="service-container">
+        <img src="https://wareinsurance.com/application/files/6215/2941/6312/Claims-management-header.jpg" alt="On-Road Management" class="service-image">
+        <div class="service-description">
+            <h2 class="service-title">On-Road Management</h2>
+            <p class="service-text">Our On-Road Management service optimizes your fleet's efficiency and reduces costs. We employ advanced technologies and expert strategies to monitor vehicle performance, track routes, and improve fuel consumption. By leveraging our solutions, you can enhance delivery operations, reduce maintenance expenses, and increase customer satisfaction.</p>
+        </div>
+    </div>
+    <div class="service-container">
+        <div class="service-description">
+            <h2 class="service-title">Fleet Management</h2>
+            <p class="service-text">Our Fleet Management service offers comprehensive oversight and control of your vehicle fleet. We handle maintenance scheduling, fuel management, driver monitoring, and more. With our expertise, you can optimize fleet utilization, improve driver safety, and minimize downtime, ultimately maximizing your operational efficiency.</p>
+            <p class="service-text">1. Voyager Fuel Transactions Check</p>
+            <p class="service-text">2. HCTRA toll invoice</p>
+            <p class="service-text">3. Element & LeasePlan Lease Invoice Check</p>
+            <p class="service-text">4. Fleet Health Tracker & Other Correspondence with AMZL Teams</p>
+            <p class="service-text">5. Repair Invoice Management to track repair cost</p>
+            <p class="service-text">6. PM Reports</p>
+            <p class="service-text">7. Netradyne Device Health Report</p>
+            <p class="service-text">8. Geo Tab device health report</p>
+            <p class="service-text">9. Grounded vans</p>
+            <p class="service-text">10. Fleet Registration Tracking Report</p>
+        </div>
+        <img src="https://cdn.midjourney.com/477a91bf-5f12-4822-a757-187129059700/0_3_384_N.webp" alt="Fleet Management" class="service-image">
+    </div>
+    <div class="service-container">
+        <img src="https://cdn.midjourney.com/6f54f6ca-09be-4fec-b89e-0a7f834cab59/0_1.png" alt="Invoice Reconciliation" class="service-image">
+        <div class="service-description">
+            <h2 class="service-title">Invoice Reconciliation</h2>
+            <p class="service-text">Our Invoice Reconciliation service ensures accuracy and transparency in your financial transactions. We meticulously review and match invoices with purchase orders, receipts, and contracts, eliminating discrepancies and avoiding overpayments or duplicate charges. With our assistance, you can maintain clean financial records and streamline your accounts payable process.</p>
+        </div>
+    </div>
+    <div class="service-container">
+        <div class="service-description">
+            <h2 class="service-title">Bookkeeping</h2>
+            <p class="service-text">Our Bookkeeping service provides comprehensive financial recording and reporting. We manage your day-to-day financial transactions, including accounts receivable, accounts payable, and general ledger maintenance. By leveraging our expertise, you can ensure accurate financial statements, make informed business decisions, and stay compliant with accounting regulations.</p>
+        </div>
+        <img src="https://cdn.midjourney.com/cc349b13-a639-4dcf-9ad6-ca78d8cbc5e3/0_2_384_N.webp" alt="Bookkeeping" class="service-image">
+    </div>
+    <div class="service-container">
+        <img src="https://cheekymunkey.co.uk/wp-content/uploads/2017/11/Business-IT-pic-1.jpg" alt="IT Support" class="service-image">
+        <div class="service-description">
+            <h2 class="service-title">IT Support</h2>
+            <p class="service-text">Our IT Support service offers reliable technical assistance to keep your systems running smoothly. We provide proactive maintenance, troubleshooting, and helpdesk support to address any IT issues that arise. With our dedicated team of experts, you can minimize downtime, enhance security, and optimize your technology infrastructure.</p>
+        </div>
+    </div>
+    <div class="service-container">
+        <div class="service-description">
+            <h2 class="service-title">Data Analysis</h2>
+            <p class="service-text">Our Data Analysis service helps you derive valuable insights from your business data. We employ advanced analytics techniques to identify trends, patterns, and opportunities that can drive informed decision-making. By leveraging our expertise, you can unlock the power of your data, optimize processes, and gain a competitive edge.</p>
+        </div>
+        <img src="https://cdn.midjourney.com/4a69dec6-0d35-4de6-901e-b76881f6a6be/0_3_384_N.webp" alt="Data Analysis" class="service-image">
+    </div>
+    <div class="service-container">
+        <img src="https://cdn.midjourney.com/349c2779-edf8-4333-adfa-fb551f3c2c5f/0_0.png" alt="Reporting" class="service-image">
+        <div class="service-description">
+            <h2 class="service-title">Reporting</h2>
+            <p class="service-text">Our Reporting service offers customized and comprehensive reporting solutions tailored to your business needs. We collect, analyze, and present data in clear and meaningful formats, empowering you to make data-driven decisions. With our assistance, you can gain actionable insights and effectively communicate your business performance to stakeholders.</p>
+        </div>
+    </div>
+</body>
+</html>

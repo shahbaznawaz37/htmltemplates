@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  height: 100vh;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1050px; /* Adjust based on your preference */
+  gap: 20px;
+  flex-direction: column;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modern-table caption {
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.modern-table th,
+.modern-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.modern-table thead {
+  background-color: #f9f9f9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+td span {
+  font-size: 0.75rem;
+}
+
+.van-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5rem;
+}
+
+.van-status {
+  color: #fff;
+  background-color: #ff6262;
+  padding: 5px 10px;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.working {
+  background-color: rgb(4, 183, 124);
+}
+
+.net-days {
+  width: 60px;
+  padding: 3px;
+  border: 1px solid lightcoral;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6262;
+  font-size: 12px;
+}
+
+.device-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Van-no {
+  font-size: 18px;
+  color: #001845;
+}
+
+.Van-no span {
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+}

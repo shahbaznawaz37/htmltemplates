@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Analysis Formulas</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS for additional styling -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: auto;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        .fraction {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.2em;
+            text-align: center;
+
+           
+        }
+
+        .fraction > span {
+            display: block;
+            padding: 0.2em;
+        }
+
+        .fraction span.f-top {
+            border-bottom: 1px solid black;
+        }
+
+        .fraction span.f-bottom {
+            border-top: 1px solid transparent;
+        }
+        .formula-container {
+        text-align: center;
+    }
+
+    .formula-title {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2 class="text-center">Financial Ratios</h2>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Category</th>
+            <th>Formula</th>
+        </tr>
+        <!-- Liquidity Ratios -->
+        <tr>
+            <td rowspan="2">Liquidity Ratios</td>
+            <td>
+                Current Ratio = 
+                <div class="fraction">
+                    <span class="f-top">Current Assets</span>
+                    <span class="f-bottom">Current Liabilities</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quick (or Acid-Test) Ratio = 
+                <div class="fraction">
+                    <span class="f-top">Current Assets - Inventory</span>
+                    <span class="f-bottom">Current Liabilities</span>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- Leverage Ratios -->
+        <tr>
+            <td rowspan="2">Leverage Ratios</td>
+            <td>
+                Current Ratio = 
+                <div class="fraction">
+                    <span class="f-top">Total Debt</span>
+                    <span class="f-bottom">Total Assets</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Debt to Equity Ratio = 
+                <div class="fraction">
+                    <span class="f-top">Total Debt</span>
+                    <span class="f-bottom">Total Equity</span>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Profitability Ratios -->
+        <tr>
+            <td rowspan="3">Profitability Ratios</td>
+            <td>
+                Net Profit Margin = 
+                <div class="fraction">
+                    <span class="f-top">Net Income</span>
+                    <span class="f-bottom">Revenue</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Return on Assets (ROA) = 
+                <div class="fraction">
+                    <span class="f-top">Net Income</span>
+                    <span class="f-bottom">Average Total Assets</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Return on Equity (ROE) = 
+                <div class="fraction">
+                    <span class="f-top">Net Income</span>
+                    <span class="f-bottom">Average Shareholder's Equity</span>
+                </div>
+            </td>
+        </tr>
+
+               <!-- Efficiency Ratios -->
+               <tr>
+                <td rowspan="3">Efficiency Ratios</td>
+                <td>
+                    Asset Turnover = 
+                    <div class="fraction">
+                        <span class="f-top">Net Sales</span>
+                        <span class="f-bottom">Average Total Assets</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Inventory Turnover = 
+                    <div class="fraction">
+                        <span class="f-top">Cost of Goods Sold</span>
+                        <span class="f-bottom">Average Inventory</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Receivable Turnover = 
+                    <div class="fraction">
+                        <span class="f-top">Net Credit Sales</span>
+                        <span class="f-bottom">Average Accounts Receivable</span>
+                    </div>
+                </td>
+            </tr>
+            
+              <!-- Market Value Ratios -->
+              <tr>
+                <td rowspan="3">Market Value Ratios</td>
+                <td>
+                    Price-Earnings Ratio (P/E) = 
+                    <div class="fraction">
+                        <span class="f-top">Stock Price</span>
+                        <span class="f-bottom">Earnings per Share (EPS)</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Price-Book Ratio (P/B) = 
+                    <div class="fraction">
+                        <span class="f-top">Stock Price</span>
+                        <span class="f-bottom">Book Value per Share</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dividend Yield = 
+                    <div class="fraction">
+                        <span class="f-top">Annual Dividends per Share</span>
+                        <span class="f-bottom">Stock Price</span>
+                    </div>
+                </td>
+            </tr>
+
+              <!-- Cash Flow Ratios -->
+              <tr>
+                <td rowspan="2">Cash Flow Ratios</td>
+                <td>
+                    Price-Earnings Ratio (P/E) = 
+                    <div class="fraction">
+                        <span class="f-top">Operating Cash Flow</span>
+                        <span class="f-bottom">Current Liabilities</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Free Cash Flow = Operating Cash Flow - Capital Expenditures
+                </td>
+            </tr>
+
+              <!-- Investment Valuation Ratios -->
+              <tr>
+                <td rowspan="2">Investment Valuation Ratios</td>
+                <td>
+                    Earnings per Share (EPS) = 
+                    <div class="fraction">
+                        <span class="f-top">Net Earnings</span>
+                        <span class="f-bottom">Outstanding Shares</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Price-to-Sales Ratio = 
+                    <div class="fraction">
+                        <span class="f-top">Stock Price</span>
+                        <span class="f-bottom">Sales per Share</span>
+                    </div>
+                </td>
+            </tr>
+
+    </table>
+
+    <h2 class="text-center">DCF Analysis Formulas</h2>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Category</th>
+            <th>Formula</th>
+        </tr>
+        <!-- DCF Analysis -->
+        <tr>
+            <td rowspan="8">DCF Analysis</td>
+            <td>
+                Discount Factor = 
+                <div class="fraction">
+                    <span class="f-top">1</span>
+                    <span class="f-bottom">(1 + r)^t</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Present Value (PV) = 
+                <div class="fraction">
+                    <span class="f-top">FVt</span>
+                    <span class="f-bottom">(1 + r)^t</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Net Present Value (NPV) = 
+                <div class="fraction">
+                    <span>Sum of PV of Future Values - Initial Investment </span>
+                </div>
+            </td>
+        </tr>
+        <td>
+            Net Present Value (NPV) = ∑(
+            <div class="fraction">
+                <span class="f-top">FVt</span>
+                <span class="f-bottom">(1 + i)^t</span>
+            </div>
+            ) - Initial Investment
+        </td>
+    </tr>
+</tr>
+<td>
+    Terminal Value (Perpetuity Growth) (TV) = 
+    <div class="fraction">
+        <span class="f-top">FVt × (1 + g) </span>
+        <span class="f-bottom">(r - g)</span>
+    </div>
+    
+    <p>FVt = Value of year Just before the teminal value <br> 
+        r = Discount Rate <br> 
+        g = Growth Rate
+    </p>
+    
+</td>
+</tr>
+</tr>
+<td>
+    Terminal Value (Exit Multiple) (TV) = 
+    <div class="fraction">
+        <span class="">FVt × EBITDA multiple</span>
+    </div>
+    
+    <p>FVt = Value of year Just before the teminal value <br>
+    </p>
+    
+</td>
+</tr>
+</tr>
+<td>
+    Enterprise Value (EV) = 
+    <div class="fraction">
+        <span class="">Sum of PV of Future Values + PV of Terminal Value</span>
+    </div> 
+    <br>
+    Enterprise Value (EV) = 
+    <div class="fraction">
+        <span class="">∑PVt + PV of TV</span>
+    </div>    
+</td>
+
+</tr>
+</tr>
+<td>
+    Equity Value = 
+    <div class="fraction">
+        <span class="">Enterprise Value - Total Debt + Cash </span>
+    </div>    
+</td>
+</tr>
+    </table>
+
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

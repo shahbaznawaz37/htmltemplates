@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Service Dashboard</title>
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #f7f7f7;
+        padding: 20px;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+
+      .card-header {
+        background-color: #fcfcfc;
+        border-bottom: 1px solid #eee;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .card-header h1 {
+        font-size: 18px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .status-tag {
+        color: #fff;
+        background-color: #ff6262;
+        padding: 6px 12px;
+        border-radius: 18px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card-content > div:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      .card-content div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fcfcfc;
+        border-radius: 8px;
+        padding: 10px;
+        border: 1px solid #eee;
+      }
+
+      .card-content div h3 {
+        font-size: 16px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .card-content div p {
+        font-size: 14px;
+        color: #777;
+        font-weight: 400;
+      }
+
+      @media (max-width: 600px) {
+        .card-content div h3,
+        .card-content div p {
+          font-size: 14px;
+        }
+
+        .card-header h1 {
+          font-size: 16px;
+        }
+
+        .status-tag {
+          font-size: 12px;
+          padding: 4px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h1>V001 - Ford 2020</h1>
+        <span class="status-tag">Out for Repair</span>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>VIN</h3>
+          <p>3C6MRVJG6ME535760</p>
+        </div>
+        <div>
+          <h3>Current Mileage</h3>
+          <p>99,967</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h1>DSP Grounded - Transmission</h1>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>Netradyne</h3>
+          <p>Last Respond Date</p>
+          <p>Under Investigation</p>
+          <p>2024-09-01</p>
+        </div>
+        <div>
+          <h3>Geotab</h3>
+          <p>Last Respond Date</p>
+          <p>Device No</p>
+          <p>2024-09-01</p>
+        </div>
+        <div>
+          <h3>PM Due</h3>
+          <p>Service Due</p>
+          <p>Device No</p>
+          <p>Due Miles</p>
+        </div>
+        <div>
+          <p>Coolant Services</p>
+          <p>G91E7537SNWP</p>
+          <p>99,967</p>
+        </div>
+        <div>
+          <p>Lube, Oil & Filter</p>
+          <p>G91E7537SNWP</p>
+          <p>99,967</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+``

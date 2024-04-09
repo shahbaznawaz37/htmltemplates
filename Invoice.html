@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lease Invoice</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      /* Style the page */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      
+      /* Style the header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+      
+      /* Style the logo */
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+      
+      /* Style the customer info */
+      .customer-info {
+        margin: 20px;
+      }
+      
+      /* Style the invoice table */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+      
+      /* Style the invoice total */
+      .total {
+        text-align: right;
+      }
+      
+      /* Style the signature field */
+      .signature {
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+      
+      /* Style the terms and conditions field */
+      .terms {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img class="logo" src="your_logo.png" alt="Logo">
+      </div>
+      <div>
+        <h1 class="text-right" contenteditable="true">Lease Invoice</h1>
+        <p class="text-right">Date: <span contenteditable="true">01/04/2023</span></p>
+        <p class="text-right">Invoice #: <span contenteditable="true">123456</span></p>
+      </div>
+    </header>
+    
+    <div class="customer-info">
+      <h2>Customer Information</h2>
+      <p contenteditable="true">John Doe</p>
+      <p contenteditable="true">123 Main St</p>
+      <p contenteditable="true">Anytown, USA 12345</p>
+      <p contenteditable="true">john.doe@example.com</p>
+    </div>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-right">Price</th>
+          <th class="text-right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td contenteditable="true">Lease of Property</td>
+          <td contenteditable="true" class="text-right">1</td>
+          <td contenteditable="true" class="text-right">$16,915.77</td>
+          <td class="text-right">$0</td>
+          </tr>
+          <tr>
+          <td contenteditable="true">Security Deposit</td>
+          <td contenteditable="true" class="text-right">1</td>
+          <td contenteditable="true" class="text-right">$500.00</td>
+          <td class="text-right">$500.00</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+          <td colspan="3" class="text-right">Total:</td>
+          <td id="total" class="text-right">$1,500.00</td>
+          </tr>
+          </tfoot>
+          </table>
+          <div class="signature">
+            <h2>Signature</h2>
+            <p></p>
+            <div class="form-group">
+              <label for="signature">Sign here:</label>
+              <div class="signature-container">
+                <canvas id="signature"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="terms">
+            <h2>Terms and Conditions</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque justo massa, ac pulvinar urna posuere nec. Proin blandit tincidunt orci at sagittis. Vestibulum id urna eu arcu consequat tristique non a quam. Nunc sit amet arcu id purus tincidunt tincidunt. Integer volutpat elit in mi dapibus, nec feugiat libero imperdiet. Aliquam hendrerit erat a tincidunt malesuada. In bibendum lobortis urna, vel tristique risus lobortis ac. Aenean nec ante lectus. Nam at nulla ut nibh placerat accumsan ut sit amet ex. Suspendisse ut urna vel tortor molestie cursus. Ut cursus nisi vel ex ultrices bibendum.</p>
+          </div>
+          
+          <!-- Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          
+          <!-- Signature pad JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+          <script>
+            var canvas = document.getElementById("signature");
+            var signaturePad = new SignaturePad(canvas);
+            
+            var table = document.querySelector("table");
+            var tbody = table.querySelector("tbody");
+            var rows = tbody.querySelectorAll("tr");
+            var totalCell = document.getElementById("total");
+            var total = 0;
+            
+            for (var i = 0; i < rows.length; i++) {
+              var row = rows[i];
+              var cells = row.querySelectorAll("td");
+              var quantity = cells[1];
+              var price = cells[2];
+              var subtotal = cells[3];
+              quantity.addEventListener("input", calculate);
+              price.addEventListener("input", calculate);
+              function calculate() {
+                var q = parseFloat(quantity.textContent) || 0;
+                var p = parseFloat(price.textContent.replace(/[^\d.-]/g,"")) || 0;
+var s = q * p;
+subtotal.textContent = "$" + s.toFixed(2);
+total = 0;
+for (var j = 0; j < rows.length; j++) {
+var rowTotal = rows[j].querySelectorAll("td")[3];
+total += parseFloat(rowTotal.textContent.replace(/[^\d.-]/g, "")) || 0;
+}
+totalCell.textContent = "$" + total.toFixed(2);
+}
+calculate();
+}
+</script>
+
+  </body>
+</html>
+          

@@ -1,0 +1,107 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.section {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Added a general background color for .section to ensure consistency */
+.section {
+  background-color: #ffffff; /* Change this to your preferred default section background */
+}
+
+/* Apply background colors only to the h2 within each color-specific section */
+.blue > h2 {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.light-blue > h2 {
+  background-color: #35b0f6;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.red > h2 {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ffffff50;
+  margin-top: 10px;
+}
+
+.route:first-child {
+  border-top: none;
+}
+
+.route span {
+  flex: 1;
+}
+
+.route button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0;
+}
+
+.details {
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.detail {
+  flex: 1; /* Distribute space evenly */
+  text-align: center; /* Center the text in each column */
+}
+
+/* Additional styling for the view link to look like a button */
+.detail a {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+span {
+  font-weight: bold;
+}

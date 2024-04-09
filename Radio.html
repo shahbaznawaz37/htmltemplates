@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Radio Button Click Area</title>
+    <style>
+        .button {
+            float: left;
+            margin: 0 10px 0 0;
+            width: 150px;
+            height: 40px;
+            position: relative;
+            border: 2px solid #007BFF;  /* Blue border by default */
+            border-radius: 15px;
+            transition: 0.3s;  /* Smooth transition */
+        }
+
+        .button:hover {
+            box-shadow: 0 0 8px #007BFF;  /* Hover effect */
+        }
+
+        .button label,
+        .button input {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .button input[type="radio"] {
+            opacity: 0.011;
+            z-index: 100;
+        }
+
+        .button input[type="radio"]:checked + label {
+            background: #007BFF;
+            color: white;
+            border-radius: 13px;
+        }
+
+        .button label {
+            cursor: pointer;
+            z-index: 90;
+            line-height: 40px; /* To vertically center the text */
+            text-align: center; /* To horizontally center the text */
+            padding: 0 10px; /* Some padding */
+            text-transform: uppercase; /* Text transformation for a more button-like feel */
+            font-family: 'Lato','Segoe UI', Arial, Helvetica, sans-serif; /* Add this line */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="button">
+        <input type="radio" id="a25" name="check-substitution-2" />
+        <label class="btn btn-default" for="a25">Yes</label>
+    </div>
+    <div class="button">
+        <input type="radio" id="a50" name="check-substitution-2" />
+        <label class="btn btn-default" for="a50">No</label>
+    </div>
+
+</body>
+
+</html>

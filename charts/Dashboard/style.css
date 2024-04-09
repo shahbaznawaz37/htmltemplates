@@ -1,0 +1,312 @@
+#dashboard {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  justify-content: left;
+}
+.chart {
+  width: 520px;
+  height: 198px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+}
+
+#customer-feedback {
+  margin: 50px 0px 0px 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+#customer-feedback:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a "lifting" effect */
+}
+#reliability {
+  margin: 15px 0px 0px 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reliability:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a "lifting" effect */
+}
+#score_chart {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+  font-family: Arial, sans-serif; /* Modern font */
+}
+
+table,
+th,
+td {
+  font-size: 0.85rem;
+}
+tbody tr:hover {
+  background-color: #eaeaea; /* Slight highlight on hover */
+}
+.firstcol {
+  width: 20%;
+  text-align: left;
+  padding-left: 5px;
+}
+
+#chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-size {
+  width: 95%;
+  height: 92%;
+  margin: 10px;
+}
+
+#employee-data {
+  width: 95%;
+  height: 500px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  padding: 10px 10px 0px 10px;
+  margin: 15px 0px 0px 50px;
+}
+
+#score-card {
+  width: 500px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  padding: 10px 10px 0px 10px;
+  margin: 50px 0px 0px 50px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#score-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a "lifting" effect */
+}
+
+.wst-card {
+  width: 520px;
+  height: 410px;
+  margin: 50px 0px 0px 15px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.wst-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a "lifting" effect */
+}
+
+.days-of-week {
+  display: flex;
+  /* background: #f0f0f0; */
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.days-of-week > div {
+  flex: 1;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.week-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.week {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+  background: white;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); */
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.week-label {
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.day {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-value {
+  margin-left: 6px;
+  font-size: 14px; /* Smaller text for second row of values */
+  color: gray;
+}
+
+.heading {
+  font-family: Arial, sans-serif;
+  margin: 15px 0px 0px 15px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+#wst_routes_chart {
+  margin-top: 10px;
+  height: 200px;
+  width: 104.5%;
+  position: relative;
+  right: 12px;
+}
+
+/* Start Fleet Dashbord stylesheet */
+
+.fleet-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: "Arial", sans-serif;
+  width: 520px;
+  height: 300px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.fleet-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex: 1;
+}
+
+.fleet-block {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet-block:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.block {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleet-title {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.fleet-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
+
+.small .value {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  color: blue;
+}
+
+.valuesm {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  color: blue;
+  background-color: lightgray;
+}
+
+.small .title {
+  font-size: 16px;
+  color: #000;
+}
+
+.small {
+  background: #fff;
+  color: #000; /* Assuming you want the text in the small blocks to be black */
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-rowsm {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.small:hover {
+  transform: translateY(-3px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+}
+
+.Rentals {
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/* End Fleet Dashboard stylesheet */
